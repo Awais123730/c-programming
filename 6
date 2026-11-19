@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+
+// Function using static storage class variable
+void counterFunction()
+{
+    // Static variable retains its value between function calls
+    static int count = 0;
+
+    count++;
+
+    printf("Function called %d time(s).\n", count);
+}
+
+int main()
+{
+    int n, i;
+
+    // Taking input from the user
+    printf("Enter how many times you want to call the counter function: ");
+    scanf("%d", &n);
+
+    printf("\n--- Calling Counter Function ---\n");
+
+    // Calling counter function using for loop
+    for (i = 0; i < n; i++)
+    {
+        counterFunction();
+    }
+
+    return 0;
+}
