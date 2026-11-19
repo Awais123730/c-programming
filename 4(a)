@@ -1,0 +1,69 @@
+
+#include <stdio.h>
+
+int main()
+{
+    // Declaring variables
+    int lower, upper, i, j, isPrime;
+
+    printf("=========================================\n");
+    printf("   PRIME NUMBERS FINDER USING WHILE LOOP\n");
+    printf("=========================================\n");
+
+    // Taking input from the user
+    printf("Enter lower and upper limits: ");
+    scanf("%d %d", &lower, &upper);
+
+    // Swapping limits if entered in reverse order
+    if (lower > upper)
+    {
+        int temp = lower;
+        lower = upper;
+        upper = temp;
+    }
+
+    printf("\nPrime numbers between %d and %d are:\n",
+           lower, upper);
+
+    // Initializing outer loop
+    i = lower;
+
+    // Outer while loop
+    while (i <= upper)
+    {
+        // Numbers less than or equal to 1 are not prime
+        if (i <= 1)
+        {
+            isPrime = 0;
+        }
+        else
+        {
+            isPrime = 1;
+            j = 2;
+
+            // Inner while loop to check divisibility
+            while (j < i)
+            {
+                if (i % j == 0)
+                {
+                    isPrime = 0;
+                    break;
+                }
+
+                j++;
+            }
+        }
+
+        // Displaying prime numbers
+        if (isPrime == 1)
+        {
+            printf("%d ", i);
+        }
+
+        i++;
+    }
+
+    printf("\n-----------------------------------------\n");
+
+    return 0;
+}
