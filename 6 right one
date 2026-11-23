@@ -1,0 +1,16 @@
+#include &lt;stdio.h&gt;
+void counter()
+{
+    static int count = 0;
+    count++;
+    printf(&quot;Function called %d times\n&quot;, count);
+}
+int main()
+{
+    counter();
+    counter();
+    counter();
+    counter();
+    counter();
+    return 0;
+}
